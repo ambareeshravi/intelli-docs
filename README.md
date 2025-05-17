@@ -24,6 +24,42 @@ An advanced Question-Answering system that leverages LLMs through Ollamma, Retri
 - python-docx (DOCX Processing)
 - Sentence Transformers (Embeddings)
 
+## Setup
+
+1. Clone the repositor and cd into the directory
+```bash
+git clone https://github.com/ambareeshravi/intelli-docs.git
+cd intelli-docs
+```
+
+2. Run the setup script:
+```bash
+chmod +x setup.sh
+./setup.sh
+```
+
+3. Start the FastAPI server:
+```bash
+uvicorn intelli_docs.main:app --reload
+```
+
+4. Access the API documentation at `http://localhost:8000/docs`
+
+
+## Usage
+
+1. Upload documents through the API endpoint
+2. Wait for document processing and embedding
+3. Ask questions through the QA endpoint
+4. Receive responses with source attributions
+
+## API Endpoints
+
+- `POST /api/v1/documents/upload` - Upload new documents
+- `POST /api/v1/qa/ask` - Ask questions about the documents
+- `GET /api/v1/documents/list` - List all processed documents
+- `DELETE /api/v1/documents/{doc_id}` - Remove a document
+
 ## Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
